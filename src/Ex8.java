@@ -8,7 +8,7 @@ public class Ex8 {
 
         System.out.println("Guess a number from 0 to 100.");
         do {
-            int userGuess = getInteger();
+            int userGuess = getInteger("Your guess: ");
 
             if (userGuess == numberToGuess) {
                 System.out.println("Correct!");
@@ -22,17 +22,17 @@ public class Ex8 {
         } while(true);
     }
 
-    public static String getStringFromUser() {
+    public static String getStringFromUser(String prompt) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print(">");
+        System.out.print(prompt);
         return scanner.nextLine();
     }
 
-    public static int getInteger() {
+    public static int getInteger(String prompt) {
         while(true) {
             try {
-                return Integer.parseInt(getStringFromUser().trim());
+                return Integer.parseInt(getStringFromUser(prompt).trim());
             } catch(NumberFormatException e) {
                 System.out.println("Input was not an integer");
             }

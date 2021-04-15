@@ -8,9 +8,10 @@ public class Ex5 {
         System.out.println("Hello " + name);
     }
 
-    public static String getStringFromUser(String str) {
-        System.out.print(str);
+    public static String getStringFromUser(String prompt) {
         Scanner scanner = new Scanner(System.in);
+
+        System.out.print(prompt);
         return scanner.nextLine();
     }
 
